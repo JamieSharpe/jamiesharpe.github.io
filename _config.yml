@@ -3,7 +3,7 @@
 #
 
 # Name of your site (displayed in the header)
-name: Jamie Sharpe
+name: Jamie Sharpe - Nullable Truth
 
 # Short bio or description (displayed in the header)
 description: Digital Forensic Investigator - Software Developer
@@ -23,7 +23,7 @@ footer-links:
   flickr:
   github: jamiesharpe
   instagram:
-  linkedin: https://www.linkedin.com/in/sharpejamie/
+  linkedin: sharpejamie
   pinterest:
   rss: # just type anything here for a working RSS icon
   twitter: jamiecsharpe
