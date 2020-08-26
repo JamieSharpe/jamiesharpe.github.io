@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm Jamie Sharpe, a digital forensic investigator and software developer.
 
-### More Information
+### Software
 
-A place to include any other types of information that you'd like to include about yourself.
+The majority of my software is built with Python, although I am familiar with the C family of languages and have experience in full stack web developement.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[mail@jamiesharpe.co.uk](mailto:mail@jamiesharpe.co.uk)
