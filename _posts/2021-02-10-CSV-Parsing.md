@@ -5,19 +5,21 @@ title: CSV (siː ɛs viː)
 
 Comma Seperated Values (CSV) is a format used to store data within a file in the form of rows and columns for data exchange. 
 
+This post is to show some of the nuances when dealing with CSV files.
+
 The principle is very simple, but let us define the components of a CSV file:
 
 * Field - The container that holds the value.
-* Delimiter - What seperates each field on the same row. Typically a comma (`,`)
+* Delimiter - What seperates each field on the same row (`,`).
 * Quote Character - The character used to wrap a field containing special characters.
-* Line Terminator - The character used to determing the end of a row of data. Typically `\n`
+* Line Terminator - The character used to determing the end of a row of data (`\n`)
 
 A common CSV file may look like this:
 
-```text
-    First Name,Last Name,Favourite Colour
-    Riley,Meyer,Blue
-    Bradley,Gibson,Green
+```
+First Name,Last Name,Favourite Colour
+Riley,Meyer,Blue
+Bradley,Gibson,Green
 ```
 
 Upon parsing, we can produce the following table:
