@@ -30,7 +30,7 @@ Upon parsing, we can produce the following table:
 
 Here's a screenshot of the file after being imported into Excel:
 
-![alt text](./2021-02-10/sample.csv%20-%20excel.png "Logo Title Text 1")
+![alt text](images/2021-02-10/sample.csv%20-%20excel.png "Logo Title Text 1")
 
 In this sample, the delimiter is the comma (`,`) character, and each field is the data inbetween.
 
