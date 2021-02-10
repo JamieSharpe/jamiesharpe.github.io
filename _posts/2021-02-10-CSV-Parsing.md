@@ -15,9 +15,9 @@ The principle is very simple, but let us define the components of a CSV file:
 A common CSV file may look like this:
 
 ```text
-First Name,Last Name,Favourite Colour
-Riley,Meyer,Blue
-Bradley,Gibson,Green
+    First Name,Last Name,Favourite Colour
+    Riley,Meyer,Blue
+    Bradley,Gibson,Green
 ```
 
 Upon parsing, we can produce the following table:
