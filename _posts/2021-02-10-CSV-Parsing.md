@@ -30,7 +30,7 @@ Upon parsing, we can produce the following table:
 
 Here's a screenshot of the file after being imported into Excel:
 
-![alt text](images/2021-02-10/sample.csv%20-%20excel.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample.csv%20-%20excel.png "Logo Title Text 1")
 
 In this sample, the delimiter is the comma (`,`) character, and each field is the data inbetween.
 
@@ -52,13 +52,13 @@ What we want is the following:
 
 However this is how the data is parsed in Excel:
 
-![alt text](./2021-02-10/sample%20incorrect.csv%20-%20excel.png)
+![alt text](/images/2021-02-10/sample%20incorrect.csv%20-%20excel.png)
 
 Note how it picks up the next field from using the comma within the quote.
 
 A similar result happens in LibreOffice Calc:
 
-![alt text](./2021-02-10/sample%20incorrect.csv%20-%20calc.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample%20incorrect.csv%20-%20calc.png "Logo Title Text 1")
 
 Although this time LibreOffice Calc appends the remaining fields onto a new column.
 
@@ -76,11 +76,11 @@ Bradley,Gibson,Aspire to inspire before we expire.,Green
 
 Here is the revised CSV file when imported into Excel:
 
-![alt text](./2021-02-10/sample%20corrected%20-%20excel.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample%20corrected%20-%20excel.png "Logo Title Text 1")
 
 And here it is imported into LibreOffice Calc:
 
-![alt text](./2021-02-10/sample%20corrected%20-%20calc.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample%20corrected%20-%20calc.png "Logo Title Text 1")
 
 But what happens if the field we are wrapping in the quote character, contains said quote character? Well, you just escape it by prepending it with the quote character.
 
@@ -92,11 +92,11 @@ Bradley,Gibson,"""Aspire to inspire before we expire."" - Eugene Bell Jr.",Green
 
 Here it is imported into Excel:
 
-![alt text](./2021-02-10/sample%20corrected%20with%20quotes%20-%20excel.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample%20corrected%20with%20quotes%20-%20excel.png "Logo Title Text 1")
 
 And in Calc:
 
-![alt text](./2021-02-10/sample%20corrected%20with%20quotes%20-%20calc.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample%20corrected%20with%20quotes%20-%20calc.png "Logo Title Text 1")
 
 See how the Double quotes are escaped when parsed. The integrity of the data is maintained.
 
@@ -113,11 +113,11 @@ Bradley,Gibson,"""Aspire to inspire before we expire.""
 
 Imported into Excel:
 
-![alt text](./2021-02-10/sample%20corrected%20with%20quotes%20and%20newlines%20-%20excel.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample%20corrected%20with%20quotes%20and%20newlines%20-%20excel.png "Logo Title Text 1")
 
 And in Calc:
 
-![alt text](./2021-02-10/sample%20corrected%20with%20quotes%20and%20newlines%20-%20calc.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/sample%20corrected%20with%20quotes%20and%20newlines%20-%20calc.png "Logo Title Text 1")
 
 See how content of the quote field is maintained. The excel preview doesn't display the new line character, but does parse it correctly. LibreOffice Calc's preview does show the new line character. The end result is identical, the content matches that of the CSV fields.
 
@@ -148,8 +148,8 @@ Bradley,Gibson,""""""Aspire to inspire before we expire.""""
 
 And here it is all correctly parsed into Excel:
 
-![alt text](./2021-02-10/meta.csv%20-%20excel.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/meta.csv%20-%20excel.png "Logo Title Text 1")
 
 and LibreOffice Calc:
 
-![alt text](./2021-02-10/meta.csv%20-%20calc.png "Logo Title Text 1")
+![alt text](/images/2021-02-10/meta.csv%20-%20calc.png "Logo Title Text 1")
