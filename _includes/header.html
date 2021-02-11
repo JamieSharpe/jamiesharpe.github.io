@@ -14,7 +14,9 @@
           {%- if site.title -%}
             <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}</a>
             {%- if site.description -%}
+            <div class="clearfix">
               {{ site.description }}
+            </div>
             {%- endif -%}
           {%- endif -%}
         </div>
