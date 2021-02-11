@@ -1,6 +1,8 @@
 ---
-layout: post
+layout: article
 title: CSV (siː ɛs viː)
+aside:
+    toc: true
 ---
 
 Comma Seperated Values (CSV) is a format used to store data within a file in the form of rows and columns for data exchange. 
