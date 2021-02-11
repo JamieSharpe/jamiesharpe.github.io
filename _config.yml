@@ -21,6 +21,7 @@ highlight_theme: tomorrow # "default" (default), "tomorrow", "tomorrow-night", "
 url     : https://jamiesharpe.github.io/ # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
 title   : Jamie Sharpe - Nullable Truth - Blog
+name: Jamie Sharpe - Nullable Truth
 avatar: https://avatars2.githubusercontent.com/u/1139365?s=120&v=4
 description: > # this means to ignore newlines until "Language & timezone"
   Jamie's blog on digital forensic investigations and software development.
@@ -53,6 +54,22 @@ author:
   github    : jamiesharpe # "user_name" the last part of your profile url, e.g. https://github.com/user_name
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email: mail@jamiesharpe.co.uk
+  facebook:
+  flickr:
+  github: jamiesharpe
+  instagram:
+  linkedin: sharpejamie
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: jamiecsharpe
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
 
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
