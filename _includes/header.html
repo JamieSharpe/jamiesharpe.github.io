@@ -13,6 +13,9 @@
           {%- include snippets/get-nav-url.html path=_paths_root -%}
           {%- if site.title -%}
             <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}</a>
+            {%- if site.description -%}
+              {{ site.description }}
+            {%- endif -%}
           {%- endif -%}
         </div>
         {%- if site.search.provider -%}
