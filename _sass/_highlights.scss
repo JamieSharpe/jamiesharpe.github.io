@@ -12,6 +12,11 @@ pre.highllight {
 
 code {
   font-family:'Bitstream Vera Sans Mono','Courier', monospace;
+
+  &[data-lang]::before
+  {
+    content: attr(data-lang);
+  }
 }
 
 .highlight .c { color: #586E75 } /* Comment */
