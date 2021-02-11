@@ -217,6 +217,7 @@ exclude:
   - /screenshots
   - /test
   - /vendor
+  - /ignore
 
 defaults:
   - scope:

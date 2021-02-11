@@ -41,11 +41,12 @@ In this sample, the delimiter is the comma (`,`) character, and each field is th
 
 But what happens when we get a little creative? Lets add a quote column to our sample file.
 
-```
+
+{% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,To be, or not to be, that is the question,Blue
 Bradley,Gibson,Aspire to inspire before we expire.,Green
-```
+{% endhighlight %}
 
 What we want is the following:
 
@@ -71,11 +72,12 @@ The solution is to wrap the fields containing special characters that are used t
 
 Here's the revised CSV file:
 
-```
+
+{% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,"To be, or not to be, that is the question",Blue
 Bradley,Gibson,Aspire to inspire before we expire.,Green
-```
+{% endhighlight %}
 
 Here is the revised CSV file when imported into Excel:
 
@@ -87,11 +89,12 @@ And here it is imported into LibreOffice Calc:
 
 But what happens if the field we are wrapping in the quote character, contains said quote character? Well, you just escape it by prepending it with the quote character.
 
-```
+
+{% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,"""To be, or not to be, that is the question"" - Prince Hamlet",Blue
 Bradley,Gibson,"""Aspire to inspire before we expire."" - Eugene Bell Jr.",Green
-```
+{% endhighlight %}
 
 Here it is imported into Excel:
 
@@ -106,13 +109,14 @@ See how the Double quotes are escaped when parsed. The integrity of the data is 
 Wrapping a field in a quotation character is not limited to being able to use the delimiter character, but all special characters: new lines, tabs, commas, quotes, even a null terminator.
 
 
-```
+
+{% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,"""To be, or not to be, that is the question""
  - opening phrase of a soliloquy given by Prince Hamlet",Blue
 Bradley,Gibson,"""Aspire to inspire before we expire.""
  - Quote by Eugene Bell Jr.",Green
-```
+{% endhighlight %}
 
 Imported into Excel:
 
@@ -128,7 +132,8 @@ And just to show an extreme case of it working, lets go meta:
 
 Here's a CSV file containing the content of all of the above CSV files along with the filename and a brief description.
 
-```
+
+{% highlight text linenos %}
 File Name,Description,File Content
 sample.csv,Basic CSV file.,"First Name,Last Name,Favourite Colour
 Riley,Meyer,Blue
@@ -147,7 +152,7 @@ Riley,Meyer,""""""To be, or not to be, that is the question""""
  - Opening phrase of a soliloquy given by Prince Hamlet"",Blue
 Bradley,Gibson,""""""Aspire to inspire before we expire.""""
  - Quote by Eugene Bell Jr."",Green"
-```
+{% endhighlight %}
 
 And here it is all correctly parsed into Excel:
 
