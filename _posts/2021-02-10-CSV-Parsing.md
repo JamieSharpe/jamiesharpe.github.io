@@ -1,6 +1,7 @@
 ---
 layout: article
 title: CSV (siː ɛs viː)
+tags: Parsing Data
 aside:
     toc: true
 ---

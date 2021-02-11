@@ -1,6 +1,7 @@
 ---
 layout: article
 title: First post.
+tags: Generic
 aside:
     toc: true
 ---
