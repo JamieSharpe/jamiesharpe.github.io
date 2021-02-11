@@ -24,9 +24,9 @@ First Name,Last Name,Favourite Colour
 Riley,Meyer,Blue
 Bradley,Gibson,Green
 {% endhighlight %}
+[sample.csv](/files/2021-02-10/sample.csv)
 
 Upon parsing, we can produce the following table:
-
 
 | First Name | Last Name | Favourite Colour |
 | ---------- | --------- | ---------------- |
@@ -41,15 +41,14 @@ In this sample, the delimiter is the comma (`,`) character, and each field is th
 
 But what happens when we get a little creative? Lets add a quote column to our sample file.
 
-
 {% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,To be, or not to be, that is the question,Blue
 Bradley,Gibson,Aspire to inspire before we expire.,Green
 {% endhighlight %}
+[sample incorrect.csv](/files/2021-02-10/sample%20incorrect.csv)
 
 What we want is the following:
-
 
 | First Name | Last Name | Quote                                     | Favourite Colour |
 | ---------- | --------- | ----------------------------------------- | ---------------- |
@@ -72,12 +71,12 @@ The solution is to wrap the fields containing special characters that are used t
 
 Here's the revised CSV file:
 
-
 {% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,"To be, or not to be, that is the question",Blue
 Bradley,Gibson,Aspire to inspire before we expire.,Green
 {% endhighlight %}
+[sample corrected.csv](/files/2021-02-10/sample%20corrected.csv)
 
 Here is the revised CSV file when imported into Excel:
 
@@ -95,6 +94,7 @@ First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,"""To be, or not to be, that is the question"" - Prince Hamlet",Blue
 Bradley,Gibson,"""Aspire to inspire before we expire."" - Eugene Bell Jr.",Green
 {% endhighlight %}
+[sample corrected with quotes.csv](/files/2021-02-10/sample%20corrected%20with%20quotes.csv)
 
 Here it is imported into Excel:
 
@@ -108,8 +108,6 @@ See how the Double quotes are escaped when parsed. The integrity of the data is 
 
 Wrapping a field in a quotation character is not limited to being able to use the delimiter character, but all special characters: new lines, tabs, commas, quotes, even a null terminator.
 
-
-
 {% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,"""To be, or not to be, that is the question""
@@ -117,6 +115,7 @@ Riley,Meyer,"""To be, or not to be, that is the question""
 Bradley,Gibson,"""Aspire to inspire before we expire.""
  - Quote by Eugene Bell Jr.",Green
 {% endhighlight %}
+[sample corrected with quotes and newlines.csv](/files/2021-02-10/sample%20corrected%20with%20quotes%20and%20newlines.csv)
 
 Imported into Excel:
 
@@ -131,7 +130,6 @@ See how content of the quote field is maintained. The excel preview doesn't disp
 And just to show an extreme case of it working, lets go meta:
 
 Here's a CSV file containing the content of all of the above CSV files along with the filename and a brief description.
-
 
 {% highlight text linenos %}
 File Name,Description,File Content
@@ -153,6 +151,7 @@ Riley,Meyer,""""""To be, or not to be, that is the question""""
 Bradley,Gibson,""""""Aspire to inspire before we expire.""""
  - Quote by Eugene Bell Jr."",Green"
 {% endhighlight %}
+[meta.csv](/files/2021-02-10/meta.csv)
 
 And here it is all correctly parsed into Excel:
 
