@@ -13,12 +13,12 @@
           {%- include snippets/get-nav-url.html path=_paths_root -%}
           {%- if site.title -%}
             <a title="{%- if site.description -%}{{ site.description }}{%- endif -%}" href="{{ __return }}">{{ site.title }}
-              <!--{%- if site.description -%}
+              {%- if site.description -%}
               <div style="color: #3e758f; font-size: 0.85rem;">
                 {{ site.description }}
               </div>
               {%- endif -%}
-            -->
+            
             </a>
           {%- endif -%}
         </div>
