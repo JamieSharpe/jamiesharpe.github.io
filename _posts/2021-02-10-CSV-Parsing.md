@@ -19,11 +19,11 @@ The principle is very simple, but let us define the components of a CSV file:
 
 A common CSV file may look like this:
 
-```
+{% highlight text linenos %}
 First Name,Last Name,Favourite Colour
 Riley,Meyer,Blue
 Bradley,Gibson,Green
-```
+{% endhighlight %}
 
 Upon parsing, we can produce the following table:
 
