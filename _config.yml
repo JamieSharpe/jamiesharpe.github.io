@@ -21,6 +21,7 @@ highlight_theme: tomorrow # "default" (default), "tomorrow", "tomorrow-night", "
 url     : https://jamiesharpe.github.io/ # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
 title   : Jamie Sharpe - Nullable Truth - Blog
+avatar: https://avatars2.githubusercontent.com/u/1139365?s=120&v=4
 description: > # this means to ignore newlines until "Language & timezone"
   Jamie's blog on digital forensic investigations and software development.
 
