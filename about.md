@@ -27,6 +27,8 @@ key: page-about
 ---
 
 
+![TeXt Theme](https://raw.githubusercontent.com/kitian616/jekyll-TeXt-theme/master/screenshots/TeXt-home.jpg)
+
 I'm Jamie Sharpe, a digital forensic investigator and software developer for Greater Manchester Police, UK.
 
 I have been writing software for 10+ years, with 3 years in the digital forensic field.
