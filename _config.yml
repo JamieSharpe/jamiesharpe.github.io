@@ -16,64 +16,46 @@
 
 ## => Site Settings
 ##############################
-text_skin: forest # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
-highlight_theme: tomorrow # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
-url     : https://jamiesharpe.github.io/ # the base hostname & protocol for your site e.g. https://www.someone.com
+text_skin: default # "default" (default), "dark", "forest", "ocean", "chocolate", "orange"
+highlight_theme: default # "default" (default), "tomorrow", "tomorrow-night", "tomorrow-night-eighties", "tomorrow-night-blue", "tomorrow-night-bright"
+url     : # the base hostname & protocol for your site e.g. https://www.someone.com
 baseurl : # does not include hostname
-title   : Jamie Sharpe - Nullable Truth - Blog
-name: Jamie Sharpe - Nullable Truth
-avatar: https://avatars2.githubusercontent.com/u/1139365?s=120&v=4
+title   : Your Site Title
 description: > # this means to ignore newlines until "Language & timezone"
-  Jamie's blog on digital forensic investigations and software development.
+  Your Site Description
 
 
 ## => Language and Timezone
 ##############################
-lang: en # the language of your site, default as "en"
-timezone: GB # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
+lang: # the language of your site, default as "en"
+timezone: # see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones for the available values
 
 
 ## => Author and Social
 ##############################
 author:
-  type      : person # "person" (default), "organization"
-  name      : Jamie Sharpe - Nullable Truth
-  url       : https://jamiesharpe.github.io/
-  avatar    : https://avatars2.githubusercontent.com/u/1139365?s=120&v=4 # path or url of avatar image (square)
-  bio       : Digital Forensic Investigator - Software Developer
-  email     : mail@jamiesharpe.co.uk
+  type      : # "person" (default), "organization"
+  name      : Your Name
+  url       :
+  avatar    : # path or url of avatar image (square)
+  bio       : I am an amazing person.
+  email     :
   facebook  : # "user_name" the last part of your profile url, e.g. https://www.facebook.com/user_name
-  twitter   : jamiecsharpe # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
+  twitter   : # "user_name" the last part of your profile url, e.g. https://twitter.com/user_name
   weibo     : # "user_id"   the last part of your profile url, e.g. https://www.weibo.com/user_id/profile?...
   googleplus: # "user_id"   the last part of your profile url, e.g. https://plus.google.com/u/0/user_id
   telegram  : # "user_name" the last part of your profile url, e.g. https://t.me/user_name
   medium    : # "user_name" the last part of your profile url, e.g. https://medium.com/user_name
   zhihu     : # "user_name" the last part of your profile url, e.g. https://www.zhihu.com/people/user_name
   douban    : # "user_name" the last part of your profile url, e.g. https://www.douban.com/people/user_name
-  linkedin  : sharpejamie # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
-  github    : jamiesharpe # "user_name" the last part of your profile url, e.g. https://github.com/user_name
+  linkedin  : # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
+  github    : # "user_name" the last part of your profile url, e.g. https://github.com/user_name
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
 
 
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email: mail@jamiesharpe.co.uk
-  facebook:
-  flickr:
-  github: jamiesharpe
-  instagram:
-  linkedin: sharpejamie
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: jamiecsharpe
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
-
 ## => GitHub Repository (if the site is hosted by GitHub)
 ##############################
-repository: JamieSharpe/jamiesharpe.github.io
+repository: user_name/repo_name
 repository_tree: master
 
 
@@ -199,7 +181,7 @@ analytics:
 ##############################
 markdown    : kramdown
 highlighter : rouge
-permalink   : /:title/
+permalink   : date
 
 exclude:
   - CHANGELOG.md

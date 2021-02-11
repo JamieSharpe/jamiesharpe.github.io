@@ -23,7 +23,7 @@ header:
       fr-LU   : *FR
       # @end locale config
     url: /archive.html
-    
+
   - titles:
       # @start locale config
       en      : &EN       About
