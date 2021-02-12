@@ -369,7 +369,7 @@ We can see the file contents here:
 
 ![CSV file contents.](/images/2021-02-12/sms.db_parser.py-2.png)
 
-There’s one more thing we can do here, just to further push the reason why we may want to create a script to extract and generate a CSV file. The `Date` column stores the data in nanoseconds relative to `CFAbsoluteTime`; you can find the documentation [here]( https://developer.apple.com/documentation/corefoundation/cfabsolutetime). We can easily convert this to something human readable. We can `import datetime`, and in the data construction section of our code we can change the `Date` key assignment to `'Date': datetime.datetime.fromtimestamp(978307200 + message_date//1e9),` . 
+There’s one more thing we can do here, just to further push the reason why we may want to create a script to extract and generate a CSV file. The `Date` column stores the data in nanoseconds relative to `CFAbsoluteTime`; you can find the documentation [here]( https://developer.apple.com/documentation/corefoundation/cfabsolutetime). We can easily convert this to something human readable. All we have to do is `import datetime`, and in the data construction section of our code we can change the `Date` key assignment to `'Date': datetime.datetime.fromtimestamp(978307200 + message_date//1e9),` . 
 
 And now the generated CSV file contains human readable dates:
 
