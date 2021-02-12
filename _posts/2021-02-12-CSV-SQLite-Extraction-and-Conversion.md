@@ -206,7 +206,7 @@ if __name__ == '__main__':
     main()
 {% endhighlight %}
 
-The script performs the following outlines operations:
+The script performs the following outlined operations:
 
 1.	Parses the arguments for:
     1.	`database` - File path to extract data from.
