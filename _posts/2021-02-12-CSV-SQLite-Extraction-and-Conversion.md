@@ -16,9 +16,9 @@ The documentation on the Python csv module can be read [here](https://docs.pytho
 
 We are going to look at:
 
-1) Writing data to a CSV file with Python.
-2) Extracting data from an SQLite database with Python.
-3) Generating a CSV file from parsing a SQLite database with Python.
+1. Writing data to a CSV file with Python.
+2. Extracting data from an SQLite database with Python.
+3. Generating a CSV file from parsing a SQLite database with Python.
 
 # Sample CSV writer
 
@@ -208,15 +208,15 @@ if __name__ == '__main__':
 
 The script performs the following outlines operations:
 
-1)	Parses the arguments for:
+1.	Parses the arguments for:
     a.	`database` - file path to extract data from.
     b.	`--no-header` - to determine if the header row is to be outputted.
     c.	`--utc` - time localisation setting.
     d.	`--version` to print the current script version.
-2)	Opens an SQLite connection to the `database` file path.
-3)	Queries the database’s `message` table and extracts the specified columns.
-4)	Parses/Processes the returned row of data.
-5)	Outputs the result.
+2.	Opens an SQLite connection to the `database` file path.
+3.	Queries the database’s `message` table and extracts the specified columns.
+4.	Parses/Processes the returned row of data.
+5.	Outputs the result.
 
 Unfortunately, I don’t have a suitable `sms.db` file on hand to show a sample of the output when running this script. However, let’s use this code as a base as a reference on how to make your own.
 
