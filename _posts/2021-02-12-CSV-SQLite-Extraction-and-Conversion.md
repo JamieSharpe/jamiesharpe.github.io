@@ -232,7 +232,7 @@ Take the time to explore the database in a browser of your choice. Here it is op
 
 ![sms.db loaded into DB Browser for SQLite.](/images/2021-02-12/sms.db - DBBrowser for SQLite-1.png)
 
-We can’t write a CSV file if we don’t know how to parse the data. This isn’t a blog post on how to reconstruct the connections between tables, but here’s an overview of how the tables can be linked. The `message` table contains a plethora of information on each individual message sent and received. Each entry has a many to one relationship with the `chat` table. The foreign→primary key relationship is between `message.handle_id`→`chat.ROWID`. With a small query we can quickly parse the data into a useable format. 
+We can’t write a CSV file if we don’t know how to parse the data. This isn’t a blog post on how to reconstruct the connections between tables, but here’s an overview of how the tables can be linked. The `message` table contains a plethora of information on each individual message sent and received. Each entry has a many-to-one relationship with the `chat` table. The foreign→primary key relationship is between `message.handle_id`→`chat.ROWID`. With a small query we can quickly parse the data into a useable format. 
 
 {% highlight SQL linenos %}
 SELECT
