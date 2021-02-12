@@ -1,6 +1,6 @@
 ---
 layout: article
-title: CSV (siː ɛs viː)
+title: CSV - SQLite Extraction and Conversion
 tags: Parsing Data
 aside:
     toc: true
@@ -433,4 +433,5 @@ if __name__ == '__main__':
 I encourage you to make a copy and try it yourself. Feel free to expand on it or use this as a template/guide to writing a parser for something else entirely.
 
 # Remarks
+
 This post scratches the surface of creating a CSV file with python. Our next step is to look into skipping the middle man, CSV, and writing our parsed data directly into a `.xlsx` spreadsheet format.
