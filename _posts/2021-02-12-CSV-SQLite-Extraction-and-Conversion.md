@@ -209,10 +209,10 @@ if __name__ == '__main__':
 The script performs the following outlines operations:
 
 1.	Parses the arguments for:
-    a.	`database` - file path to extract data from.
-    b.	`--no-header` - to determine if the header row is to be outputted.
-    c.	`--utc` - time localisation setting.
-    d.	`--version` to print the current script version.
+    1.	`database` - file path to extract data from.
+    2.	`--no-header` - to determine if the header row is to be outputted.
+    3.	`--utc` - time localisation setting.
+    4.	`--version` to print the current script version.
 2.	Opens an SQLite connection to the `database` file path.
 3.	Queries the database’s `message` table and extracts the specified columns.
 4.	Parses/Processes the returned row of data.
