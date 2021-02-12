@@ -22,7 +22,7 @@ We are going to look at:
 
 # Sample CSV writer
 
-Previously, we looked at how to hand craft a CSV file into a supported format to be imported into other software. We learnt there are a few ’‘gotchas’ when dealing with special characters. Rather than dealing with all the pitfalls in formatting, let the Python language, and its inbuilt libraries, do the heavy lifting!
+Previously, we looked at how to hand craft a CSV file into a supported format to be imported into other software. We learnt there are a few ‘gotchas’ when dealing with special characters. Rather than dealing with all the pitfalls in formatting, let the Python language, and its inbuilt libraries, do the heavy lifting!
 
 Want to write a basic CSV file in Python? Let's dive straight into the code:
 
