@@ -53,7 +53,7 @@ Notice how the fields in the data has been automatically formatted to accommodat
 
 To keep with the previous post, here's the imported file in Excel:
 
-![names.csv imported into Excel](/images/2021-02-11/names.csv%20-%20excel.png)
+![names.csv imported into Excel](/images/2021-02-12/names.csv%20-%20excel.png)
 
 ## Breakdown
 
@@ -217,15 +217,16 @@ Unfortunately, I don’t have a suitable `sms.db` file on hand to show a sample 
 
 We are going to work with a sample `sms.db`. [Joshua Hickman]( https://thebinaryhick.blog/2020/04/16/ios-13-images-images-now-available/) has created, and kindly provided access to an iPhone SE iOS (v13.3.1) extraction that can be found here at [Digital Copora](https://downloads.digitalcorpora.org/corpora/mobile/ios_13_4_1/) (Warning: 9GB+ file size). You can find the file we are going to use at `iOS 13.4.1 Extraction.zip[\Extraction\Apple iPhone SE (GSM) Full Image - 13-4-1.tar[\Extraction\Apple iPhone SE (GSM) Full Image - 13-4-1\private\var\mobile\Library\SMS\sms.db]]`.
 
-|File Name|MD5 Hash|SHA-1 Hash|
-|--------------|---------------|----------------|
-|sms.db|8def954b34ff9e0ca40403d05366e030|877b5fb664bcd9f6906bfbfe81c03091b1a32f58|
+|File Name|MD5 Hash                        |SHA-1 Hash                              |
+|---------|--------------------------------|----------------------------------------|
+|sms.db   |8def954b34ff9e0ca40403d05366e030|877b5fb664bcd9f6906bfbfe81c03091b1a32f58|
 
 Take the time to explore the database in a browser of your choice. Here it is open in [DB Browser for SQLite](https://sqlitebrowser.org/):
 
 ![sms.db loaded into DB Browser for SQLite.](/images/2021-02-12/sms.db - DBBrowser for SQLite-1.png)
 
 We can’t write a CSV file, if we don’t know how to parse the data. This isn’t a blog post on how to reconstruct the connections between tables, but here’s an overview of how the tables can be linked. The `message` table contains a plethora of information on each individual message sent and received. Each entry has a many to one relationship with the `chat` table. The foreign→primary key relationship is between `message.handle_id`→`chat.ROWID`. With a small query we can quickly parse the data into a useable format. 
+
 {% highlight SQL linenos %}
 SELECT
 	message.ROWID as "ID",
@@ -240,7 +241,7 @@ LEFT JOIN chat ON
 	message.handle_id = chat.ROWID
 ORDER BY
 	message.date ASC
-{% endhighligh %}
+{% endhighlight %}
 
 And here’s a screenshot of the results:
 
