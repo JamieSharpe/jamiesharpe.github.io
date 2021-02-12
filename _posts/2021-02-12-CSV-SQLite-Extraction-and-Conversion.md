@@ -6,19 +6,25 @@ aside:
     toc: true
 ---
 
-This is a follow-up post from [CSV-Parsing](/CSV-Parsing) to show examples on how to write data from python into a CSV formatted file. There will be some references made to the previous post, so to be sure to take a glance there first.
+This is a follow-up post from [CSV (siː ɛs viː)](/CSV-Parsing) to show examples on how to write data with python into a CSV formatted file. There will be some references made to the previous post, so be sure to take a glance there first.
 
 # Python and its CSV module
 
 Python already comes with a CSV parsing library, which makes our life so much easier. The nuances from the previous post (almost) all go away!
 
-The documentation on the python csv module can be read [here](https://docs.python.org/3/library/csv.html). But I hope this post extracts some of the core fundamentals, and provides an example on how to effectively use it. I'm in the digital forensic field, so the focus will be to expand upon one of [Josh Brunty's](https://twitter.com/joshbrunty) scripts they shared [here](https://twitter.com/joshbrunty/status/1359622811321589762).
+The documentation on the Python csv module can be read [here](https://docs.python.org/3/library/csv.html). But I hope this post extracts some of the core fundamentals, and provides an example on how to effectively use it. I'm in the digital forensic field, so the focus will be to expand upon one of [Josh Brunty's](https://twitter.com/joshbrunty) scripts they shared [here](https://twitter.com/joshbrunty/status/1359622811321589762).
+
+We are going to look at:
+
+1) Writing data to a CSV file with Python.
+2) Extracting data from an SQLite database with Python.
+3) Generating a CSV file from parsing a SQLite database with Python.
 
 # Sample CSV writer
 
-Previously, we looked at how to hand craft a CSV file in a supported format to be imported into other software. We learnt there are a few ’gotchas’ when dealing with special characters. Rather than dealing with all the pitfalls in formatting, let the python language, and its inbuilt libraries do the heavy lifting!
+Previously, we looked at how to hand craft a CSV file into a supported format to be imported into other software. We learnt there are a few ’‘gotchas’ when dealing with special characters. Rather than dealing with all the pitfalls in formatting, let the Python language, and its inbuilt libraries, do the heavy lifting!
 
-Want to write a basic CSV file in python? Let's dive straight into the code:
+Want to write a basic CSV file in Python? Let's dive straight into the code:
 
 {% highlight python linenos %}
 import csv
@@ -42,14 +48,14 @@ with open('names.csv', mode='w', newline='') as csv_file:
     writer.writerow(person)
 {% endhighlight %}
 
-Here is a very basic sample on how python can be used to produce a CSV file. The keen eyed will recognise the data set is from the previous post. This example produces the following file:
+Here is a very basic sample on how Python can be used to produce a CSV file. The keen eyed will recognise the data set is from the previous post. This example produces the following file:
 
 {% highlight text linenos %}
 First Name,Last Name,Quote,Favourite Colour
 Riley,Meyer,"To be, or not to be, that is the question",Blue
 {% endhighlight %}
 
-Notice how the fields in the data has been automatically formatted to accommodate the commas, not to be confused with delimiter.
+Notice how the fields in the data have been automatically formatted to accommodate the commas, not to be confused with delimiter.
 
 To keep with the previous post, here's the imported file in Excel:
 
@@ -57,16 +63,16 @@ To keep with the previous post, here's the imported file in Excel:
 
 ## Breakdown
 
-If you understand the code, great, you can skip this section. But let’s have a look at the different sections.
+If you understand the code, great, you can skip this section. But let’s have a look at the different parts of the code.
 
 Quickly running over some of the basics, we `import csv`, as we are going to use this library.
-Using a [context manager](https://www.python.org/dev/peps/pep-0343/) we [open]( https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) a file `names.csv`: Setting the file access `mode` to `w`rite, and the `newline` to the empty string `’’` following the guidelines from the python csv [documentation](https://docs.python.org/3/library/csv.html#csv.writer).
+Using a [context manager](https://www.python.org/dev/peps/pep-0343/) we [open]( https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files) a file `names.csv`: Setting the file access `mode` to `w`rite, and the `newline` to the empty string `''` following the guidelines from the [Python CSV documentation](https://docs.python.org/3/library/csv.html#csv.writer).
 
 The `fieldnames` array of strings acts in two parts. It is used to form the column headers for the CSV file, as well as the dictionary lookup keys for the data. The `writer` variable holds the `csv.DictWriter` object that is setup to use the opened file, and to expect the `fieldnames` access key format for the data we are going to provide. This is followed by writing the first row containing the header fields to the file.
 
 Now we move on to constructing the data to be inserted into the CSV file. A `person` dictionary is created, where the keys match those defined in `fieldnames`, and for each key, we give it a respective value.
 
-The final step, we write the value of `person` into the CSV file with ` writer.writerow(person)`. The writer object handles the dictionary key lookup with the `fieldnames` we provided it.
+The final step, we write the value of `person` into the CSV file with `writer.writerow(person)`. The writer object handles the dictionary key lookup with the `fieldnames` we provided it.
 
 ## New lines
 
@@ -74,7 +80,7 @@ This also works when the field contains newlines, quote characters, or any other
 
 Here's a look at the escaping in action:
 
-The python code:
+The Python code:
 
 {% highlight python linenos %}
 import csv
@@ -201,11 +207,12 @@ if __name__ == '__main__':
 {% endhighlight %}
 
 The script performs the following outlines operations:
+
 1)	Parses the arguments for:
-a.	`database` - file path to extract data from.
-b.	`--no-header` - to determine if the header row is to be outputted.
-c.	`--utc` - time localisation setting.
-d.	`--version` to print the current script version.
+    a.	`database` - file path to extract data from.
+    b.	`--no-header` - to determine if the header row is to be outputted.
+    c.	`--utc` - time localisation setting.
+    d.	`--version` to print the current script version.
 2)	Opens an SQLite connection to the `database` file path.
 3)	Queries the database’s `message` table and extracts the specified columns.
 4)	Parses/Processes the returned row of data.
@@ -215,7 +222,7 @@ Unfortunately, I don’t have a suitable `sms.db` file on hand to show a sample 
 
 ## Creating a SQLite parser for sms.db
 
-We are going to work with a sample `sms.db`. [Joshua Hickman]( https://thebinaryhick.blog/2020/04/16/ios-13-images-images-now-available/) has created, and kindly provided access to an iPhone SE iOS (v13.3.1) extraction that can be found here at [Digital Copora](https://downloads.digitalcorpora.org/corpora/mobile/ios_13_4_1/) (Warning: 9GB+ file size). You can find the file we are going to use at `iOS 13.4.1 Extraction.zip[\Extraction\Apple iPhone SE (GSM) Full Image - 13-4-1.tar[\Extraction\Apple iPhone SE (GSM) Full Image - 13-4-1\private\var\mobile\Library\SMS\sms.db]]`.
+We are going to work with a sample `sms.db` [Joshua Hickman]( https://thebinaryhick.blog/2020/04/16/ios-13-images-images-now-available/) has created, and kindly provided access to, an iPhone SE iOS (v13.3.1) extraction that can be found here at [Digital Copora](https://downloads.digitalcorpora.org/corpora/mobile/ios_13_4_1/) (Warning: 9GB+ file size). You can find the file we are going to use at `iOS 13.4.1 Extraction.zip[\Extraction\Apple iPhone SE (GSM) Full Image - 13-4-1.tar[\Extraction\Apple iPhone SE (GSM) Full Image - 13-4-1\private\var\mobile\Library\SMS\sms.db]]`.
 
 |File Name|MD5 Hash                        |SHA-1 Hash                              |
 |---------|--------------------------------|----------------------------------------|
@@ -225,7 +232,7 @@ Take the time to explore the database in a browser of your choice. Here it is op
 
 ![sms.db loaded into DB Browser for SQLite.](/images/2021-02-12/sms.db - DBBrowser for SQLite-1.png)
 
-We can’t write a CSV file, if we don’t know how to parse the data. This isn’t a blog post on how to reconstruct the connections between tables, but here’s an overview of how the tables can be linked. The `message` table contains a plethora of information on each individual message sent and received. Each entry has a many to one relationship with the `chat` table. The foreign→primary key relationship is between `message.handle_id`→`chat.ROWID`. With a small query we can quickly parse the data into a useable format. 
+We can’t write a CSV file if we don’t know how to parse the data. This isn’t a blog post on how to reconstruct the connections between tables, but here’s an overview of how the tables can be linked. The `message` table contains a plethora of information on each individual message sent and received. Each entry has a many to one relationship with the `chat` table. The foreign→primary key relationship is between `message.handle_id`→`chat.ROWID`. With a small query we can quickly parse the data into a useable format. 
 
 {% highlight SQL linenos %}
 SELECT
@@ -291,7 +298,7 @@ if __name__ == '__main__':
     main()
 {% endhighlight %}
 
-![Running python script on sms.db](/images/2021-02-12/sms.db_parser.py.png)
+![Running Python script on sms.db](/images/2021-02-12/sms.db_parser.py.png)
 
 
 The script follows a watered-down process model of Josh’s version. I've stripped out the exception handling, argument parsing, and hard coded the file name, to highlight the processing and output stages. The removed code is good practice, and I highly recommend writing software following good practices; although this is purely for a demonstration.
@@ -362,7 +369,7 @@ We can see the file contents here:
 
 ![CSV file contents.](/images/2021-02-12/sms.db_parser.py-2.png)
 
-There’s one more thing we can do here, just to further push the reason we may want to create a script to extract and generate a CSV file. The `Date` column stores the data as `CFAbsoluteTime`; you can find the documentation [here]( https://developer.apple.com/documentation/corefoundation/cfabsolutetime) in nanoseconds. We can easily convert this to something human readable. We can `import datetime`, and in the data construction section of our code we can change the `Date` key assignment to `'Date': datetime.datetime.fromtimestamp(978307200 + message_date//1e9),` . 
+There’s one more thing we can do here, just to further push the reason we may want to create a script to extract and generate a CSV file. The `Date` column stores the data in nanoseconds relative to `CFAbsoluteTime`; you can find the documentation [here]( https://developer.apple.com/documentation/corefoundation/cfabsolutetime). We can easily convert this to something human readable. We can `import datetime`, and in the data construction section of our code we can change the `Date` key assignment to `'Date': datetime.datetime.fromtimestamp(978307200 + message_date//1e9),` . 
 
 And now the generated CSV file contains human readable dates:
 
@@ -435,4 +442,4 @@ I encourage you to make a copy and try it yourself. Feel free to expand on it or
 
 # Remarks
 
-This post scratches the surface of creating a CSV file with python. Our next step is to look into skipping the middle man, CSV, and writing our parsed data directly into a `.xlsx` spreadsheet format.
+This post scratches the surface of creating a CSV file with Python. Our next step is to look into skipping the middle man, CSV, and writing our parsed data directly into a `.xlsx` spreadsheet format.
