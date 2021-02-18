@@ -36,6 +36,25 @@ The majority of my software is built with Python, although I am familiar with th
 
 Most of my software development involves creating data parsers and automation. I also work on some larger scale solutions to promote higher standards within the organisation.
 
+Python Technologies:
+
+* Django
+* Qt Graphical User Interfaces
+* Word/Excel Generation
+* HTML Generation
+
+C# Techonologies:
+
+* Model View View-Model - MVVM
+* Windows Presentation Foundation - WPF
+
+Other:
+
+* Databases (SQLite, MySQL, PostgreSQL)
+* Full web stack development (Python, JavaScript, CSS, HTML, Database)
+* REST API
+* Multithreading
+
 ### Contact me
 
 Feel free to reach out to me via email at [mail@jamiesharpe.co.uk](mailto:mail@jamiesharpe.co.uk) or through any of the social media links at the bottom of the page.
